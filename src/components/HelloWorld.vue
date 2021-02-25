@@ -54,9 +54,11 @@ export default {
     }
   },
   mounted () {
+    // search all users
+    // https://api.github.com/search/users?q=augusto
     axios
-      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-      .then(response => (this.info = response))
+      .get('https://api.github.com/users/augustosandim/repos?per_page=1')
+      .then(response => (this.info = response.data))
   }
 }
 </script>
